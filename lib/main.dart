@@ -34,7 +34,9 @@ class _EditProfileState extends State <EditProfile>{
           elevation: 2,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           leading: IconButton(
+            tooltip: " <- Home",
               icon: Icon(Icons.arrow_back,
+
                 color:  Colors.black87,),
               onPressed: (){} ),
 
@@ -71,13 +73,22 @@ class _EditProfileState extends State <EditProfile>{
                 child: Stack(
                   children: [
                     Container(
-                      width: 130,
-                      height: 130,
+                      width: 110,
+                      height: 110,
                       decoration: BoxDecoration(
+                            image: DecorationImage(
+                            image: AssetImage("assets/img/art.png"),
+                            fit: BoxFit.fill,
+
+
+                          ),
                         border: Border.all(
                           width: 4,
                           color: Theme.of(context).scaffoldBackgroundColor
                         ),
+
+                        // borderRadius: BorderRadius.circular(70),
+
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
@@ -88,12 +99,8 @@ class _EditProfileState extends State <EditProfile>{
 
                           )
                         ],
-                          image: DecorationImage(
-                            image: AssetImage("assets/img/art.png"),
-                            fit: BoxFit.fill,
 
 
-                          )
                       ),
 
                     ),
@@ -104,8 +111,8 @@ class _EditProfileState extends State <EditProfile>{
                       right: 0,
 
                       child: Container(
-                        height: 40,
-                        width: 40,
+                        height: 35,
+                        width: 35,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 4,
@@ -140,11 +147,12 @@ class _EditProfileState extends State <EditProfile>{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   OutlineButton(
-                      padding: EdgeInsets.symmetric(horizontal: 60),
-                      shape: RoundedRectangleBorder(
+                    onPressed: (){},
+                    padding: EdgeInsets.symmetric(horizontal: 60),
+                    shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)
                       ),
-                      onPressed: (){},
+
                     child: Text("Cancel",
                     style: TextStyle(
                       fontSize: 18,
