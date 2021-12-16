@@ -1,5 +1,6 @@
 // import 'dart:html';
 
+import 'package:exp/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -44,7 +45,12 @@ class _EditProfileState extends State <EditProfile>{
             IconButton(
               icon: Icon(Icons.settings,
                 color: Colors.black87,),
-              onPressed: (){},)
+              onPressed: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => ProfSettings())
+                );
+              },)
           ],
 
 
