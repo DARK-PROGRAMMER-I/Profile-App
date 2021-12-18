@@ -98,12 +98,31 @@ class _ProfSettingsState extends State<ProfSettings> {
               thickness: 2,
             ),
 
-            GestureDetector(
+            // GestureDetector(
+            //
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       Text("New For You", style: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.w500),),
+            //       // The normal switch(Material Switch) is not good looking, so instead we will use CupertinoSwitch.
+            //       Transform.scale(
+            //           scale: 0.6,
+            //           child: CupertinoSwitch(value: true, onChanged: (bool val ){}))
+            //     ],
+            //   ),
+            // ),
+            notifications("New For You", true),
+            notifications("Account Activity", true),
+            notifications("Opportunity", false),
 
-              child: Row(
 
-              ),
-            ),
+            OutlinedButton(onPressed: (){
+
+            },
+
+
+            child: Text("Cancel"))
+            
 
 
 
@@ -114,6 +133,21 @@ class _ProfSettingsState extends State<ProfSettings> {
       ),
     );
 
+  }
+  GestureDetector notifications(String text , bool isActive){
+    return GestureDetector(
+      
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(text, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black54),),
+          Transform.scale(
+              scale: 0.6,
+              child: CupertinoSwitch(value: isActive, onChanged: (bool val){},))
+          
+        ],
+      ),
+    );
   }
 
   GestureDetector text_row(String name){
