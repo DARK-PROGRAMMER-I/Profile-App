@@ -93,14 +93,40 @@ class _ProfSettingsState extends State<ProfSettings> {
 
   }
 
-  text_row(String name){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+  GestureDetector text_row(String name){
+    return GestureDetector(
+      onTap: (){
+        showDialog(context: context,
+            builder: (BuildContext context){
+              return AlertDialog(
+                title: Text(name),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text("Option-1"),
+                    Text("Option-2"),
+                    Text("Option-3"),
+                  ],
+                ),
+                actions: [
 
-        Text(name, style: TextStyle(color: Colors.black54, fontSize: 16),),
-        Icon(Icons.arrow_forward_ios, color: Colors.black54, size: 16,)
-      ],
+                  TextButton(onPressed: (){
+                    Navigator.of(context).pop();
+                  }, child: Text("Close"))
+                ],
+              );
+            },
+        );
+      },
+
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+
+          Text(name, style: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.w500),),
+          Icon(Icons.arrow_forward_ios, color: Colors.black54, size: 16,)
+        ],
+      ),
     );
 
   }
