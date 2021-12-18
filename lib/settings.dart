@@ -80,7 +80,30 @@ class _ProfSettingsState extends State<ProfSettings> {
             SizedBox(height: 18,),
             text_row("Language"),
             SizedBox(height: 18,),
-            text_row("Privacy and Accuracy")
+            text_row("Privacy and Accuracy"),
+
+
+            SizedBox(height: 25,),
+            Row(
+              children: [
+                Icon(Icons.volume_up_outlined),
+                SizedBox(
+                  width: 15,
+                ),
+                Text("Notifications", style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),)
+              ],
+            ),
+            Divider(
+              height: 26,
+              thickness: 2,
+            ),
+
+            GestureDetector(
+
+              child: Row(
+
+              ),
+            ),
 
 
 
