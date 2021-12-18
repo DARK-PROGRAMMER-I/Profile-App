@@ -115,13 +115,20 @@ class _ProfSettingsState extends State<ProfSettings> {
             notifications("Account Activity", true),
             notifications("Opportunity", false),
 
+            SizedBox(
+              height: 50,
+            ),
+            Center(
+              child: OutlinedButton(
 
-            OutlinedButton(onPressed: (){
-
-            },
-
-
-            child: Text("Cancel"))
+                  style: OutlinedButton.styleFrom(
+                    shape: StadiumBorder()
+                  ),
+              onPressed: (){},
+              child: Text("Sign Out", style: TextStyle(color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold,
+                  letterSpacing: 3),),
+              ),
+            )
             
 
 
